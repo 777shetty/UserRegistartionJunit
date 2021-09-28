@@ -87,5 +87,10 @@ public class UserValidationTest {
 		boolean isValid = userValidation.validatePassword("chethan5865jik77");
 		Assert.assertFalse(isValid);
 	}
+	public void givenPassword_WhenNoNumberCharacter_ShouldReturnFalse() {
+		UserValidation userValidation =new UserValidation();
+		boolean isValid = userValidation.validatePassword("chethanshetty");
+		Assert.assertFalse(isValid);
+	}
 
 }
