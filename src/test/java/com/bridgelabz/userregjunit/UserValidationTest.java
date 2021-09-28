@@ -39,5 +39,17 @@ public class UserValidationTest {
 		boolean isNotValid = userValidation.validateName("sh");
 		Assert.assertFalse(isNotValid);
 	}
+	@Test
+	public void givenEmailAddress_WhenProper_ShouldReturnTrue() {
+		UserValidation userValidation =new UserValidation();
+		boolean isValid = userValidation.validateEmail("chethanshetty777@gmail.com");
+		Assert.assertTrue(isValid);
+	}
+	@Test
+	public void givenEmailAddress_WhenNotProper_ShouldReturnFalse() {
+		UserValidation userValidation =new UserValidation();
+		boolean isValid = userValidation.validateEmail("chethanshetty777@gmail.com");
+		Assert.assertFalse(isValid);
+	}
 
 }
