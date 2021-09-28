@@ -92,5 +92,12 @@ public class UserValidationTest {
 		boolean isValid = userValidation.validatePassword("chethanshetty");
 		Assert.assertFalse(isValid);
 	}
+	
+	@Test
+	public void givenPassword_WhenOneMoreThanOneSpecailCharacter_ShouldReturnFalse() {
+		UserValidation userValidation =new UserValidation();
+		boolean isValid = userValidation.validatePassword("Chethan@777shetty");
+		Assert.assertFalse(isValid);
+	}
 
 }
