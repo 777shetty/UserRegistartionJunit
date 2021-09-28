@@ -75,5 +75,17 @@ public class UserValidationTest {
 		boolean isValid = userValidation.validateMobileNumber("91 85695623");
 		Assert.assertFalse(isValid);
 	}
+	@Test
+	public void givenPassword_WhenProper_ShouldReturnTrue() {
+		UserValidation userValidation =new UserValidation();
+		boolean isValid = userValidation.validatePassword("Chethan@7777");
+		Assert.assertTrue(isValid);
+	}
+	@Test
+	public void givenPassword_WhenNoUpperCharacter_ShouldReturnFalse() {
+		UserValidation userValidation =new UserValidation();
+		boolean isValid = userValidation.validatePassword("chethan5865jik77");
+		Assert.assertFalse(isValid);
+	}
 
 }
