@@ -163,5 +163,13 @@ public class UserValidationTest {
 		boolean isValid = userValidation.validatePassword("Chethan@777shetty");
 		Assert.assertFalse(isValid);
 	}
+	@Test
+	public void givenPassword_WhenEmpty_ShouldReturnFalse()
+	{
+		UserValidation userValidator = new UserValidation();
+		boolean isValid=userValidator.validatePassword("");
+		Assert.assertFalse(isValid);
+
+	}
 
 }
