@@ -48,7 +48,7 @@ public class UserValidationTest {
 	@Test
 	public void givenEmailAddress_WhenNotProper_ShouldReturnFalse() {
 		UserValidation userValidation =new UserValidation();
-		boolean isValid = userValidation.validateEmail("chethanshetty777@gmail.com");
+		boolean isValid = userValidation.validateEmail("chethan777@gmail.com");
 		Assert.assertFalse(isValid);
 	}
 	@Test
