@@ -70,6 +70,30 @@ public class UserValidationTest {
 
 	}
 	@Test
+	public void givenLastName_Empty_ShouldReturnFalse() {
+
+		UserValidation userValidator = new UserValidation();
+		boolean isValid = userValidator.validateName("");
+		Assert.assertFalse(isValid);
+
+	}
+	@Test
+	public void givenLastName_WhenContainsSpecialCharacters_ShouldReturnFalse() {
+
+		UserValidation userValidator = new UserValidation();
+		boolean isValid = userValidator.validateName("Wilson@");
+		Assert.assertFalse(isValid);
+
+	}
+	@Test
+	public void givenLastName_WhenContainsNumbers_ShouldReturnFalse() {
+
+		UserValidation userValidator = new UserValidation();
+		boolean isValid = userValidator.validateName("Wilson123");
+		Assert.assertFalse(isValid);
+
+	}
+	@Test
 	public void givenEmailAddress_WhenNotProper_ShouldReturnFalse() {
 		UserValidation userValidation =new UserValidation();
 		boolean isValid = userValidation.validateEmail("chethan777@gmail.com");
