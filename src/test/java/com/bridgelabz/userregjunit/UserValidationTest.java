@@ -46,6 +46,14 @@ public class UserValidationTest {
 		Assert.assertTrue(isValid);
 	}
 	@Test
+	public void givenFirstName_Empty_ShouldReturnFalse() {
+
+		UserValidation userValidator = new UserValidation();
+		boolean isValid = userValidator.validateName("");
+		Assert.assertFalse(isValid);
+
+	}
+	@Test
 	public void givenEmailAddress_WhenNotProper_ShouldReturnFalse() {
 		UserValidation userValidation =new UserValidation();
 		boolean isValid = userValidation.validateEmail("chethan777@gmail.com");
