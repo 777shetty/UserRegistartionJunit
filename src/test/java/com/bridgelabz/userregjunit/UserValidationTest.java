@@ -81,7 +81,7 @@ public class UserValidationTest {
 	public void givenLastName_WhenContainsSpecialCharacters_ShouldReturnFalse() {
 
 		UserValidation userValidator = new UserValidation();
-		boolean isValid = userValidator.validateName("Wilson@");
+		boolean isValid = userValidator.validateName("Shetty@");
 		Assert.assertFalse(isValid);
 
 	}
@@ -89,7 +89,7 @@ public class UserValidationTest {
 	public void givenLastName_WhenContainsNumbers_ShouldReturnFalse() {
 
 		UserValidation userValidator = new UserValidation();
-		boolean isValid = userValidator.validateName("Wilson123");
+		boolean isValid = userValidator.validateName("Shetty123");
 		Assert.assertFalse(isValid);
 
 	}
@@ -98,6 +98,14 @@ public class UserValidationTest {
 		UserValidation userValidation =new UserValidation();
 		boolean isValid = userValidation.validateEmail("chethan777@gmail.com");
 		Assert.assertFalse(isValid);
+	}
+	@Test
+	public void givenEmail_WhenEmpty_ShouldReturnFalse() {
+
+		UserValidation userValidator = new UserValidation();
+		boolean isValid = userValidator.validateEmail("");
+		Assert.assertFalse(isValid);
+
 	}
 	@Test
 	public void givenMobileNumber_WhenProper_ShouldReturnTrue() {
