@@ -132,6 +132,14 @@ public class UserValidationTest {
 		Assert.assertFalse(isValid);
 	}
 	@Test
+	public void givenPhoneNumber_WhenEmpty_ShouldReturnFalse() {
+
+		UserValidation userValidator = new UserValidation();
+		boolean isValid = userValidator.validateMobileNumber("");
+		Assert.assertFalse(isValid);
+
+	}
+	@Test
 	public void givenPassword_WhenProper_ShouldReturnTrue() {
 		UserValidation userValidation =new UserValidation();
 		boolean isValid = userValidation.validatePassword("Chethan@7777");
