@@ -46,10 +46,66 @@ public class UserValidationTest {
 		Assert.assertTrue(isValid);
 	}
 	@Test
+	public void givenFirstName_Empty_ShouldReturnFalse() {
+
+		UserValidation userValidator = new UserValidation();
+		boolean isValid = userValidator.validateName("");
+		Assert.assertFalse(isValid);
+
+	}
+	@Test
+	public void givenFirstName_WhenContainsSpecialCharacters_ShouldReturnFalse() {
+
+		UserValidation userValidator = new UserValidation();
+		boolean isValid = userValidator.validateName("Chethan@");
+		Assert.assertFalse(isValid);
+
+	}
+	@Test
+	public void givenFirstName_WhenContainsNumbers_ShouldReturnFalse() {
+
+		UserValidation userValidator = new UserValidation();
+		boolean isValid = userValidator.validateName("Chethan777");
+		Assert.assertFalse(isValid);
+
+	}
+	@Test
+	public void givenLastName_Empty_ShouldReturnFalse() {
+
+		UserValidation userValidator = new UserValidation();
+		boolean isValid = userValidator.validateName("");
+		Assert.assertFalse(isValid);
+
+	}
+	@Test
+	public void givenLastName_WhenContainsSpecialCharacters_ShouldReturnFalse() {
+
+		UserValidation userValidator = new UserValidation();
+		boolean isValid = userValidator.validateName("Shetty@");
+		Assert.assertFalse(isValid);
+
+	}
+	@Test
+	public void givenLastName_WhenContainsNumbers_ShouldReturnFalse() {
+
+		UserValidation userValidator = new UserValidation();
+		boolean isValid = userValidator.validateName("Shetty123");
+		Assert.assertFalse(isValid);
+
+	}
+	@Test
 	public void givenEmailAddress_WhenNotProper_ShouldReturnFalse() {
 		UserValidation userValidation =new UserValidation();
 		boolean isValid = userValidation.validateEmail("chethan777@gmail.com");
 		Assert.assertFalse(isValid);
+	}
+	@Test
+	public void givenEmail_WhenEmpty_ShouldReturnFalse() {
+
+		UserValidation userValidator = new UserValidation();
+		boolean isValid = userValidator.validateEmail("");
+		Assert.assertFalse(isValid);
+
 	}
 	@Test
 	public void givenMobileNumber_WhenProper_ShouldReturnTrue() {
@@ -76,6 +132,14 @@ public class UserValidationTest {
 		Assert.assertFalse(isValid);
 	}
 	@Test
+	public void givenPhoneNumber_WhenEmpty_ShouldReturnFalse() {
+
+		UserValidation userValidator = new UserValidation();
+		boolean isValid = userValidator.validateMobileNumber("");
+		Assert.assertFalse(isValid);
+
+	}
+	@Test
 	public void givenPassword_WhenProper_ShouldReturnTrue() {
 		UserValidation userValidation =new UserValidation();
 		boolean isValid = userValidation.validatePassword("Chethan@7777");
@@ -98,6 +162,14 @@ public class UserValidationTest {
 		UserValidation userValidation =new UserValidation();
 		boolean isValid = userValidation.validatePassword("Chethan@777shetty");
 		Assert.assertFalse(isValid);
+	}
+	@Test
+	public void givenPassword_WhenEmpty_ShouldReturnFalse()
+	{
+		UserValidation userValidator = new UserValidation();
+		boolean isValid=userValidator.validatePassword("");
+		Assert.assertFalse(isValid);
+
 	}
 
 }
