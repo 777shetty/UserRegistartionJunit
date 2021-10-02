@@ -54,6 +54,14 @@ public class UserValidationTest {
 
 	}
 	@Test
+	public void givenFirstName_WhenContainsSpecialCharacters_ShouldReturnFalse() {
+
+		UserValidation userValidator = new UserValidation();
+		boolean isValid = userValidator.validateName("Chethan@");
+		Assert.assertFalse(isValid);
+
+	}
+	@Test
 	public void givenEmailAddress_WhenNotProper_ShouldReturnFalse() {
 		UserValidation userValidation =new UserValidation();
 		boolean isValid = userValidation.validateEmail("chethan777@gmail.com");
